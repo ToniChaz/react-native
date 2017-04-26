@@ -7,8 +7,8 @@
 import React, { Component } from 'react'
 import { Navigator } from 'react-native'
 import Splash from './Splash'
-import Search from './pages/Search'
-import Info from './pages/Info'
+import SearchPage from './containers/SearchPage'
+import InfoPage from './containers/InfoPage'
 
 export default class Router extends Component {
 	configureScene(route){
@@ -32,10 +32,10 @@ export default class Router extends Component {
 			return <Splash navigator={navigator}/>
 		}
 		if (route.id === 'Info') {
-			return <Info navigator={navigator}/>
+			return <InfoPage navigator={navigator}/>
 		}
 		if (route.id === 'Search') {
-			return <Search navigator={navigator}/>
+			return <SearchPage navigator={navigator}/>
 		}
 	}
 }

@@ -5,7 +5,7 @@
  */
 
 import React, { Component } from 'react'
-import { Animated, StyleSheet, Text, View, Easing } from 'react-native'
+import { Animated, StyleSheet, View, Easing } from 'react-native'
 
 export default class Splash extends Component {
 	constructor(props) {
@@ -46,7 +46,7 @@ export default class Splash extends Component {
           width: 125,
           height: 110,
           transform: [{rotate: spin}] }}
-					source={require('../images/react-js.png')}
+					source={require('../images/logo.png')}
 				/>
 			</View>
 		)
