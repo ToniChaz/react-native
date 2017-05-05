@@ -8,13 +8,13 @@ import React, { Component } from 'react'
 import { StyleSheet, Text, View, Button } from 'react-native'
 
 export default class Info extends Component {
-	goToSearchPage() {
-		this.props.navigator.replace({
-			id: 'Search',
-		})
+	static navigationOptions = {
+		title: 'Info Weather Page'
 	}
 
 	render() {
+		const {navigate} = this.props.navigation;
+
 		return (
 			<View style={styles.container}>
 				<View style={styles.infoTitleView}>
@@ -24,7 +24,7 @@ export default class Info extends Component {
 					Free weather application to search your city weather.
 				</Text>
 				<View style={styles.buttonContainer}>
-					<Button  title="Search Your City" color="#841584" onPress={this.goToSearchPage.bind(this)}/>
+					<Button title="Search Your City" color="#841584" onPress={() => navigate('SearchPage') }/>
 				</View>
 			</View>
 		)
@@ -35,9 +35,9 @@ const styles = StyleSheet.create({
 	container: {
 		padding: 15
 	},
-	infoTitleView:{
-		marginTop:20,
-		marginBottom:10,
+	infoTitleView: {
+		marginTop: 20,
+		marginBottom: 10,
 		justifyContent: 'center',
 		alignItems: 'center'
 	},

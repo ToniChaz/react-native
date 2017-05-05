@@ -7,7 +7,11 @@
 import React, { Component } from 'react'
 import { Animated, StyleSheet, View, Easing } from 'react-native'
 
-export default class Splash extends Component {
+class Splash extends Component {
+	static navigationOptions = {
+		header: null
+	}
+
 	constructor(props) {
 		super(props)
 		this.spinValue = new Animated.Value(0)
@@ -16,9 +20,7 @@ export default class Splash extends Component {
 	componentDidMount() {
 		this.spin()
 		setTimeout(() => {
-			this.props.navigator.replace({
-				id: 'Info',
-			})
+			this.props.navigation.navigate('InfoPage')
 		}, 2000)
 	}
 
@@ -43,9 +45,10 @@ export default class Splash extends Component {
 			<View style={styles.splashContainer}>
 				<Animated.Image
 					style={{
-          width: 125,
-          height: 110,
-          transform: [{rotate: spin}] }}
+						width: 125,
+						height: 110,
+						transform: [{rotate: spin}]
+					}}
 					source={require('../images/logo.png')}
 				/>
 			</View>
@@ -61,3 +64,5 @@ const styles = StyleSheet.create({
 		alignItems: 'center',
 	}
 })
+
+export default Splash

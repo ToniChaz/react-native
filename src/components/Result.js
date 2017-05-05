@@ -8,7 +8,7 @@ import React, { Component } from 'react'
 import { StyleSheet, Text, View, Image } from 'react-native'
 import weatherImages from '../constants/weatherImages'
 
-export default class Result extends Component {
+class Result extends Component {
 	degToCompass(num) {
 		let val = Math.floor((num / 22.5) + 0.5)
 		let arr = ['N', 'NNE', 'NE', 'ENE', 'E', 'ESE', 'SE', 'SSE', 'S', 'SSW', 'SW', 'WSW', 'W', 'WNW', 'NW', 'NNW']
@@ -51,3 +51,5 @@ const styles = StyleSheet.create({
 		height: 50
 	}
 })
+
+export default Result

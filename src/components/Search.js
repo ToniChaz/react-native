@@ -9,22 +9,23 @@ import { StyleSheet, TextInput, Text, View, Button, TouchableHighlight } from 'r
 import Result from './Result'
 import Error from './Error'
 
-export default class Search extends Component {
+class Search extends Component {
+	static navigationOptions = {
+		title: 'Welcome to Search Weather'
+	}
+
 	constructor(props) {
 		super(props)
 
-		this.state = { pressStatus: false }
+		this.state = {pressStatus: false}
 	}
-	onHideUnderlay(){
-		this.setState({ pressStatus: false })
+
+	onHideUnderlay() {
+		this.setState({pressStatus: false})
 	}
-	onShowUnderlay(){
-		this.setState({ pressStatus: true })
-	}
-	goToInfoPage() {
-		this.props.navigator.replace({
-			id: 'Info',
-		})
+
+	onShowUnderlay() {
+		this.setState({pressStatus: true})
 	}
 
 	searchCityWeather() {
@@ -32,7 +33,7 @@ export default class Search extends Component {
 	}
 
 	render() {
-		const {text, result, error, disabled} = this.props
+		const {text, result, error, disabled, navigation: {navigate}} = this.props
 
 		return (
 			<View style={styles.container}>
@@ -46,7 +47,7 @@ export default class Search extends Component {
 					value={text}
 				/>
 				{result ? <Result result={result}/> : null }
-				{error ? <Error error={error} /> : null	}
+				{error ? <Error error={error}/> : null    }
 				<View style={styles.buttonContainer}>
 					<TouchableHighlight
 						activeOpacity={1}
@@ -59,7 +60,7 @@ export default class Search extends Component {
 					</TouchableHighlight>
 				</View>
 				<View style={styles.buttonContainer}>
-					<Button title="Info Page" color="#841584" onPress={this.goToInfoPage.bind(this)}/>
+					<Button title="Information" color="#841584" onPress={() => navigate('InfoPage') }/>
 				</View>
 			</View>
 		)
@@ -101,3 +102,5 @@ const styles = StyleSheet.create({
 		backgroundColor: '#206',
 	},
 })
+
+export default Search

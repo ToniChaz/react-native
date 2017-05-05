@@ -7,7 +7,7 @@
 import React, { Component } from 'react'
 import { StyleSheet, Text, View } from 'react-native'
 
-export default class Error extends Component {
+class Error extends Component {
 
 	render() {
 		const {error} = this.props
@@ -31,3 +31,5 @@ const styles = StyleSheet.create({
 		alignItems: 'center'
 	}
 })
+
+export default Error
