@@ -5,7 +5,7 @@
  */
 
 import React, { Component } from 'react'
-import { StyleSheet, TextInput, Text, View, Button, TouchableHighlight } from 'react-native'
+import { StyleSheet, TextInput, Text, View, Button, TouchableHighlight, Keyboard } from 'react-native'
 import Result from './Result'
 import Error from './Error'
 
@@ -29,6 +29,7 @@ class Search extends Component {
 	}
 
 	searchCityWeather() {
+		Keyboard.dismiss()
 		this.props.searchWeather(this.props.text)
 	}
 
@@ -38,7 +39,7 @@ class Search extends Component {
 		return (
 			<View style={styles.container}>
 				<View style={styles.searchTitleContainer}>
-					<Text style={styles.searchTitle}>Search you city</Text>
+					<Text style={styles.searchTitle} accessibilityLabel={'Search you city'}>Search you city</Text>
 				</View>
 				<TextInput
 					style={styles.searchInput}
@@ -50,11 +51,12 @@ class Search extends Component {
 				{error ? <Error error={error}/> : null    }
 				<View style={styles.buttonContainer}>
 					<TouchableHighlight
+						disabled={disabled}
 						activeOpacity={1}
 						onHideUnderlay={this.onHideUnderlay.bind(this)}
 						onShowUnderlay={this.onShowUnderlay.bind(this)}
 						onPress={this.searchCityWeather.bind(this)}
-						style={ this.state.pressStatus ? styles.buttonPress : styles.button }
+						style={ this.state.disabled ? styles.buttonDisabled : this.state.pressStatus ? styles.buttonPress : styles.button }
 					>
 						<Text style={styles.search}>Search Weather</Text>
 					</TouchableHighlight>
@@ -95,12 +97,16 @@ const styles = StyleSheet.create({
 	},
 	button: {
 		borderColor: '#204',
-		backgroundColor: '#204',
+		backgroundColor: '#204'
 	},
 	buttonPress: {
-		borderColor: '#206',
-		backgroundColor: '#206',
+		borderColor: '#373496',
+		backgroundColor: '#373496'
 	},
+	buttonDisabled:{
+		borderColor: '#9c9c9c',
+		backgroundColor: '#9c9c9c'
+	}
 })
 
 export default Search

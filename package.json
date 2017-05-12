@@ -6,7 +6,8 @@
     "build": "(cd android/ && ./gradlew assembleDebug)",
     "start": "node node_modules/react-native/local-cli/cli.js start",
     "bundle-android": "react-native bundle --platform android --dev false --entry-file index.android.js --bundle-output android/app/src/main/assets/index.android.bundle --sourcemap-output android/app/src/main/assets/index.android.map --assets-dest android/app/src/main/res/",
-    "test": "jest"
+    "test": "jest",
+    "atdd": "./node_modules/.bin/cucumber-js --compiler babel:babel-core/register tests/acceptance/features/"
   },
   "dependencies": {
     "react": "16.0.0-alpha.6",
@@ -18,11 +19,25 @@
   "devDependencies": {
     "babel-jest": "18.0.0",
     "babel-preset-react-native": "1.9.1",
-    "jest": "18.1.0",
-    "react-test-renderer": "15.4.2",
-    "redux": "^3.6.0"
+    "chai": "2.2.0",
+    "chai-as-promised": "5.0.0",
+    "colors": "1.0.3",
+    "cucumber": "2.0.0-rc.9",
+    "jest": "19.0.2",
+    "q": "2.0.2",
+    "react-test-renderer": "15.5.4",
+    "redux": "3.6.0",
+    "underscore": "1.8.3",
+    "wd": "0.3.11"
   },
   "jest": {
-    "preset": "react-native"
+    "preset": "react-native",
+    "testRegex": "(/tests/unit/.*|(\\.|/)(test|spec))\\.jsx?$",
+    "transformIgnorePatterns": [
+      "node_modules/(?!(jest-)?react-native|react-navigation)"
+    ],
+    "setupFiles": [
+      "./tests/config/jest-setup.js"
+    ]
   }
 }

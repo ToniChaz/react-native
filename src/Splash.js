@@ -19,9 +19,10 @@ class Splash extends Component {
 
 	componentDidMount() {
 		this.spin()
-		setTimeout(() => {
-			this.props.navigation.navigate('InfoPage')
-		}, 2000)
+		this.props.navigation.navigate('InfoPage')
+		// setTimeout(() => {
+		// 	this.props.navigation.navigate('InfoPage')
+		// }, 2000)
 	}
 
 	spin() {

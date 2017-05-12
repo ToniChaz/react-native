@@ -18,13 +18,13 @@ export default class Info extends Component {
 		return (
 			<View style={styles.container}>
 				<View style={styles.infoTitleView}>
-					<Text style={styles.infoTitle}>¡The weather station!</Text>
-				</View>
+					<Text style={styles.infoTitle} accessibilityLabel={'The weather station'}>The weather station</Text>
+			</View>
 				<Text style={styles.infoText}>
 					Free weather application to search your city weather.
 				</Text>
-				<View style={styles.buttonContainer}>
-					<Button title="Search Your City" color="#841584" onPress={() => navigate('SearchPage') }/>
+				<View testID={'searchBtn'} style={styles.buttonContainer}>
+					<Button testID={'searchBtn'} title="Search Your City" color="#841584" onPress={() => navigate('SearchPage') }/>
 				</View>
 			</View>
 		)
