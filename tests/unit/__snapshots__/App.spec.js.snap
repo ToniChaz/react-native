@@ -71,27 +71,242 @@ exports[`App component renders correctly 1`] = `
         <View
           style={
             Object {
-              "alignItems": "center",
-              "backgroundColor": "#204",
-              "flex": 1,
-              "justifyContent": "center",
+              "padding": 15,
             }
           }
         >
-          <Image
-            source={1}
+          <View
             style={
               Object {
-                "height": 110,
-                "transform": Array [
-                  Object {
-                    "rotate": "0deg",
-                  },
-                ],
-                "width": 125,
+                "alignItems": "center",
+                "justifyContent": "center",
+                "marginBottom": 10,
+                "marginTop": 20,
               }
             }
-          />
+          >
+            <Text
+              accessibilityLabel="The weather station"
+              accessible={true}
+              allowFontScaling={true}
+              ellipsizeMode="tail"
+              style={
+                Object {
+                  "fontSize": 18,
+                }
+              }
+            >
+              The weather station
+            </Text>
+          </View>
+          <Text
+            accessible={true}
+            allowFontScaling={true}
+            ellipsizeMode="tail"
+            style={
+              Object {
+                "fontSize": 14,
+              }
+            }
+          >
+            Free weather application to search your city weather.
+          </Text>
+          <View
+            style={
+              Object {
+                "marginTop": 30,
+              }
+            }
+            testID="searchBtn"
+          >
+            <View
+              accessibilityComponentType="button"
+              accessibilityLabel={undefined}
+              accessibilityTraits={
+                Array [
+                  "button",
+                ]
+              }
+              accessible={true}
+              hitSlop={undefined}
+              isTVSelectable={true}
+              onLayout={undefined}
+              onResponderGrant={[Function]}
+              onResponderMove={[Function]}
+              onResponderRelease={[Function]}
+              onResponderTerminate={[Function]}
+              onResponderTerminationRequest={[Function]}
+              onStartShouldSetResponder={[Function]}
+              style={
+                Object {
+                  "opacity": 1,
+                }
+              }
+              testID="searchBtn"
+              tvParallaxProperties={undefined}
+            >
+              <View
+                style={
+                  Array [
+                    Object {},
+                  ]
+                }
+              >
+                <Text
+                  accessible={true}
+                  allowFontScaling={true}
+                  ellipsizeMode="tail"
+                  style={
+                    Array [
+                      Object {
+                        "color": "#0C42FD",
+                        "fontSize": 18,
+                        "padding": 8,
+                        "textAlign": "center",
+                      },
+                      Object {
+                        "color": "#841584",
+                      },
+                    ]
+                  }
+                >
+                  Search Your City
+                </Text>
+              </View>
+            </View>
+          </View>
+        </View>
+      </View>
+    </View>
+    <View
+      cardStyle={undefined}
+      getScreenDetails={[Function]}
+      headerMode={undefined}
+      index={0}
+      layout={
+        Object {
+          "height": 0,
+          "initHeight": 0,
+          "initWidth": 0,
+          "isMeasured": false,
+          "width": 0,
+        }
+      }
+      mode="float"
+      navigation={
+        Object {
+          "dispatch": [Function],
+          "goBack": [Function],
+          "navigate": [Function],
+          "setParams": [Function],
+          "state": Object {
+            "index": 0,
+            "routes": Array [
+              Object {
+                "key": "Init",
+                "routeName": "InfoPage",
+              },
+            ],
+          },
+        }
+      }
+      router={
+        Object {
+          "getActionForPathAndParams": [Function],
+          "getComponentForRouteName": [Function],
+          "getComponentForState": [Function],
+          "getPathAndParamsForState": [Function],
+          "getScreenConfig": [Function],
+          "getScreenOptions": [Function],
+          "getStateForAction": [Function],
+        }
+      }
+      style={
+        Object {
+          "backgroundColor": "#EFEFF2",
+          "elevation": 4,
+          "height": 64,
+          "paddingTop": 20,
+          "shadowColor": "black",
+          "shadowOffset": Object {
+            "height": 0.5,
+          },
+          "shadowOpacity": 0.1,
+          "shadowRadius": 0.5,
+        }
+      }
+      transitionConfig={undefined}
+    >
+      <View
+        style={
+          Object {
+            "flex": 1,
+          }
+        }
+      >
+        <View
+          style={
+            Array [
+              Object {
+                "bottom": 0,
+                "left": 0,
+                "position": "absolute",
+                "right": 0,
+                "top": 0,
+              },
+              Object {
+                "flexDirection": "row",
+              },
+            ]
+          }
+        >
+          <View
+            pointerEvents="box-none"
+            style={
+              Object {
+                "alignItems": "center",
+                "backgroundColor": "transparent",
+                "bottom": 0,
+                "justifyContent": "center",
+                "left": 70,
+                "opacity": 1,
+                "position": "absolute",
+                "right": 70,
+                "top": 0,
+                "transform": Array [
+                  Object {
+                    "translateX": 0,
+                  },
+                ],
+              }
+            }
+          >
+            <Text
+              accessibilityTraits="header"
+              accessible={true}
+              allowFontScaling={true}
+              ellipsizeMode="tail"
+              numberOfLines={1}
+              onLayout={[Function]}
+              style={
+                Array [
+                  Object {
+                    "color": "rgba(0, 0, 0, .9)",
+                    "fontSize": 17,
+                    "fontWeight": "600",
+                    "marginHorizontal": 16,
+                    "textAlign": "center",
+                  },
+                  Array [
+                    null,
+                    undefined,
+                  ],
+                ]
+              }
+            >
+              Info Weather Page
+            </Text>
+          </View>
         </View>
       </View>
     </View>

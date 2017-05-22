@@ -34,9 +34,7 @@ const caps = () => {
 			platformName: 'iOS',
 			platformVersion: '10.3',
 			deviceName: 'iPhone 5s',
-			app: process.env.DEV
-				? `${process.env.PWD}/ios/build/Build/Products/Release-iphonesimulator/WeatherApp.app`
-				: 'http://appium.github.io/appium/assets/TestApp7.1.app.zip'
+			app: `${process.env.PWD}/ios/build/Build/Products/Release-iphonesimulator/WeatherApp.app`
 		}
 	} else {
 		return {
@@ -45,9 +43,7 @@ const caps = () => {
 			platformName: 'Android',
 			platformVersion: '6.0',
 			deviceName: 'Nexus5',
-			app: process.env.DEV
-				? `${process.env.PWD}/android/app/build/outputs/apk/app-debug.apk`
-				: 'http://appium.github.io/appium/assets/ApiDemos-debug.apk'
+			app: `${process.env.PWD}/android/app/build/outputs/apk/app-release.apk`
 		}
 	}
 }

@@ -13,7 +13,7 @@ export default class Info extends Component {
 	}
 
 	render() {
-		const {navigate} = this.props.navigation;
+		const {navigate} = this.props.navigation
 
 		return (
 			<View style={styles.container}>
@@ -23,7 +23,7 @@ export default class Info extends Component {
 				<Text style={styles.infoText}>
 					Free weather application to search your city weather.
 				</Text>
-				<View testID={'searchBtn'} style={styles.buttonContainer}>
+				<View style={styles.buttonContainer}>
 					<Button testID={'searchBtn'} title="Search Your City" color="#841584" onPress={() => navigate('SearchPage') }/>
 				</View>
 			</View>

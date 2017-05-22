@@ -21,17 +21,22 @@ defineSupportCode(({setDefaultTimeout, After, Before, Given, When, Then}) => {
 	})
 
 	Given(/^I am on the Info screen and see the "(.*)" title$/, (title) => {
-		return driver.elementByAccessibilityId(title).text().then((text)=>{
+		return driver.elementByAccessibilityId(title).text().then((text) => {
 			text.should.equal(title)
 		})
 	})
 
 	When(/^I click on Search Your City button$/, () => {
-		return driver.elementByClassName('android.widget.Button').click().sleep(1000)
+		if (process.env.ios) {
+			return driver.elementById('searchBtn').click().sleep(1000)
+		} else {
+			return driver.elementByClassName('android.widget.Button').click().sleep(1000)
+		}
+
 	})
 
 	Then(/^I should see "(.*)" title$/, (title) => {
-		return driver.elementByAccessibilityId(title).text().then((text)=>{
+		return driver.elementByAccessibilityId(title).text().then((text) => {
 			text.should.equal(title)
 		})
 	})
